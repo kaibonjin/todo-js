@@ -64,3 +64,7 @@ button:hover {
 .todo-name {
   margin-right: 8px;
 }
+
+li {
+  list-style-type: square;
+}
