@@ -54,3 +54,13 @@ button:hover {
   margin: 8px;
   border-radius: 8px;
 }
+
+.list-row {
+  display: flex;
+  align-items: center;
+  padding-bottom: 4px;
+}
+
+.todo-name {
+  margin-right: 8px;
+}
