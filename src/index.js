@@ -25,15 +25,18 @@ const onClickAdd = () => {
   const completeButton = document.createElement("button");
   completeButton.innerText = "完了";
   completeButton.addEventListener("click", () => {
-    alert("完了");
+    deleteFromImcompleteList(completeButton.parentNode.parentNode);
   });
   // 削除button生成
   const deleteButton = document.createElement("button");
   deleteButton.innerText = "削除";
   deleteButton.addEventListener("click", () => {
-    const deleteTarget = deleteButton.parentNode.parentNode;
-    document.getElementById("incomplete-list").removeChild(deleteTarget);
+    deleteFromImcompleteList(deleteButton.parentNode.parentNode);
   });
+  // （共通処理）未完了リストから指定の要素を削除
+  const deleteFromImcompleteList = (target) => {
+    document.getElementById("incomplete-list").removeChild(target);
+  };
   // divの子要素に入れる
   li.appendChild(div);
   div.appendChild(p);
