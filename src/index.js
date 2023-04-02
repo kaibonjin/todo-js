@@ -12,9 +12,11 @@ const onClickAdd = () => {
   // テキストボックスの値を取得し、初期化
   const inputText = document.getElementById("add-text").value;
   document.getElementById("add-text").value = "";
-  // divの生成
+  // liの生成
   const li = document.createElement("li");
-  li.className = "list-row";
+  //divの生成
+  const div = document.createElement("div");
+  div.className = "list-row";
   // liの生成
   const p = document.createElement("p");
   p.className = "todo-name";
@@ -29,13 +31,14 @@ const onClickAdd = () => {
   const deleteButton = document.createElement("button");
   deleteButton.innerText = "削除";
   deleteButton.addEventListener("click", () => {
-    const deleteTarget = deleteButton.parentNode;
+    const deleteTarget = deleteButton.parentNode.parentNode;
     document.getElementById("incomplete-list").removeChild(deleteTarget);
   });
   // divの子要素に入れる
-  li.appendChild(p);
-  li.appendChild(completeButton);
-  li.appendChild(deleteButton);
+  li.appendChild(div);
+  div.appendChild(p);
+  div.appendChild(completeButton);
+  div.appendChild(deleteButton);
   // 未完了のリストに追加
   document.getElementById("incomplete-list").appendChild(li);
 };
